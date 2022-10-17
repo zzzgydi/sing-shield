@@ -1,0 +1,27 @@
+ListenFields {
+  listen: string;
+  listen_port: number;
+  tcp_fast_open: boolean;
+  udp_fragment: boolean;
+  sniff: boolean;
+  sniff_override_destination: boolean;
+  domain_strategy: string;
+  udp_timeout: number;
+  proxy_protocol: boolean;
+  proxy_protocol_accept_no_header: boolean;
+  detour: string;
+}
+
+UserPwd (inline) {
+  username: string;
+  password: string;
+}
+
+HttpInbound {
+  tag: string;
+  users: UserPwd[];
+  tls: TlsInbound;
+  set_system_proxy: boolean;
+
+  @use=ListenFields
+}
