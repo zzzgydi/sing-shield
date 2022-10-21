@@ -1,6 +1,7 @@
 import { Form, Modal } from "antd";
 import { useRef, useState } from "react";
 import { DirectInbound } from "./inbound/Direct";
+import { HttpInbound } from "./inbound/HttpInbound";
 
 interface Props {
   handler?: ReturnType<typeof useInboundForm>;
@@ -37,7 +38,10 @@ export const FormModal = (props: Props) => {
       }}
       bodyStyle={{ height: 360, overflowY: "auto", paddingBottom: 10 }}
     >
-      <Form form={form}>{type === "direct" && <DirectInbound />}</Form>
+      <Form form={form}>
+        {type === "direct" && <DirectInbound />}
+        {type === "http" && <HttpInbound />}
+      </Form>
     </Modal>
   );
 };
