@@ -56,7 +56,7 @@ function parse(input) {
       const labelCol = { span: 6 };
       return (
         <>
-          ${elements.join("\n")}
+          ${elements.join("\n\n")}
         </>
       )
     }`;
@@ -107,15 +107,12 @@ function parseContent(label, isArray = false) {
             <Form.Item label="${key}" labelCol={labelCol}>
               {fields.map(({ key, name, ...restField }) => (
                 <Space key={key} className="flex mb-2" align="baseline">
-                  ${temp.elements.join("\n")}
+                  ${temp.elements.join("\n\n")}
                   <MinusCircleOutlined onClick={() => remove(name)} />
                 </Space>
               ))}
-              <Form.Item>
-                <Button type="dashed" onClick={() => add()} block icon={<PlusOutlined />}>
-                  Add ${key}
-                </Button>
-              </Form.Item>
+
+              <Button type="dashed" onClick={() => add()} block>Add ${key}</Button>
             </Form.Item>
           )}
           </Form.List>
@@ -137,11 +134,11 @@ function parseContent(label, isArray = false) {
               <>
                 {fields.map(({ key, name, ...restField }) => (
                   <Space key={key} className="flex mb-2" align="baseline">
-                    ${temp.elements.join("\n")}
+                    ${temp.elements.join("\n\n")}
                     <MinusCircleOutlined onClick={() => remove(name)} />
                   </Space>
                 ))}
-               
+
                 <Button type="dashed" onClick={() => add()} block>
                   Add ${key}
                 </Button>

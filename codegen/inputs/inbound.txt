@@ -26,3 +26,70 @@ HttpInbound {
 
   @extends ListenFields
 }
+
+MixedInbound {
+  tag: string;
+  users: UserPwd[];
+  set_system_proxy: boolean;
+
+  @extends ListenFields
+}
+
+SocksInbound {
+  tag: string;
+  users: UserPwd[];
+
+  @extends ListenFields
+}
+
+#[inline]
+SSUserPwd {
+  name: string;
+  password: string;
+}
+
+#[inline]
+SSDestinations {
+  name: string;
+  server: string;
+  server_port: number;
+  password: string;
+}
+
+ShadowsocksInbound {
+  tag: string;
+  method: string;
+  password: string;
+  users: SSUserPwd[];
+  destinations: SSDestinations[];
+
+  @extends ListenFields
+}
+
+
+RedirectInbound {
+  tag: string;
+
+  @extends ListenFields
+}
+
+TproxyInbound {
+  tag: string;
+  network: string;
+
+  @extends ListenFields
+}
+
+TlsInbound {
+  enabled: boolean;
+  server_name: string;
+ 
+  min_version: string;
+  max_version: string;
+  
+  certificate: string;
+  certificate_path: string;
+  key: string;
+  key_path: string;
+  
+}
