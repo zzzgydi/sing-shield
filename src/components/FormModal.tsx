@@ -1,7 +1,11 @@
 import { Form, Modal } from "antd";
 import { useRef, useState } from "react";
-import { DirectInbound } from "./inbound/Direct";
+import { DirectInbound } from "./inbound/DirectInbound";
 import { HttpInbound } from "./inbound/HttpInbound";
+import { MixedInbound } from "./inbound/MixedInbound";
+import { ShadowsocksInbound } from "./inbound/ShadowsocksInbound";
+import { SocksInbound } from "./inbound/SocksInbound";
+import { VmessInbound } from "./inbound/VmessInbound";
 
 interface Props {
   handler?: ReturnType<typeof useInboundForm>;
@@ -19,6 +23,7 @@ export const FormModal = (props: Props) => {
   if (handler) {
     handler.current = {
       createInbound: (type: string) => {
+        form.resetFields();
         setOpen(true);
         setType(type);
       },
@@ -41,6 +46,10 @@ export const FormModal = (props: Props) => {
       <Form form={form}>
         {type === "direct" && <DirectInbound />}
         {type === "http" && <HttpInbound />}
+        {type === "mixed" && <MixedInbound />}
+        {type === "socks" && <SocksInbound />}
+        {type === "shadowsocks" && <ShadowsocksInbound />}
+        {type === "vmess" && <VmessInbound />}
       </Form>
     </Modal>
   );

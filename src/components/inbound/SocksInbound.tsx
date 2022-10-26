@@ -2,7 +2,7 @@ import { Form, Input, Select, Switch, Space, Button } from "antd";
 import { MinusCircleOutlined } from "@ant-design/icons";
 import { ListenFields } from "./ListenFields";
 
-export const HttpInbound = () => {
+export const SocksInbound = () => {
   const labelCol = { span: 6 };
   return (
     <>
@@ -40,19 +40,6 @@ export const HttpInbound = () => {
           </Form.Item>
         )}
       </Form.List>
-
-      <Form.Item name="tls" label="tls" labelCol={labelCol}>
-        undefined
-      </Form.Item>
-
-      <Form.Item
-        name="set_system_proxy"
-        label="set_system_proxy"
-        labelCol={labelCol}
-        valuePropName="checked"
-      >
-        <Switch />
-      </Form.Item>
 
       <ListenFields />
     </>

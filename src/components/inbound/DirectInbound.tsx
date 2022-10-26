@@ -1,5 +1,5 @@
 import { Form, Input, Select } from "antd";
-import { ListenField } from "./ListenField";
+import { ListenFields } from "./ListenFields";
 
 export const DirectInbound = () => {
   const labelCol = { span: 6 };
@@ -32,7 +32,7 @@ export const DirectInbound = () => {
         <Input />
       </Form.Item>
 
-      <ListenField />
+      <ListenFields />
     </>
   );
 };

@@ -7,9 +7,11 @@ export const ListenFields = () => {
       <Form.Item name="listen" label="listen" labelCol={labelCol}>
         <Input />
       </Form.Item>
+
       <Form.Item name="listen_port" label="listen_port" labelCol={labelCol}>
         <Input />
       </Form.Item>
+
       <Form.Item
         name="tcp_fast_open"
         label="tcp_fast_open"
@@ -18,6 +20,7 @@ export const ListenFields = () => {
       >
         <Switch />
       </Form.Item>
+
       <Form.Item
         name="udp_fragment"
         label="udp_fragment"
@@ -26,6 +29,7 @@ export const ListenFields = () => {
       >
         <Switch />
       </Form.Item>
+
       <Form.Item
         name="sniff"
         label="sniff"
@@ -34,6 +38,7 @@ export const ListenFields = () => {
       >
         <Switch />
       </Form.Item>
+
       <Form.Item
         name="sniff_override_destination"
         label="sniff_override_destination"
@@ -41,6 +46,7 @@ export const ListenFields = () => {
       >
         <Switch />
       </Form.Item>
+
       <Form.Item
         name="domain_strategy"
         label="domain_strategy"
@@ -48,9 +54,11 @@ export const ListenFields = () => {
       >
         <Input />
       </Form.Item>
+
       <Form.Item name="udp_timeout" label="udp_timeout" labelCol={labelCol}>
         <Input />
       </Form.Item>
+
       <Form.Item
         name="proxy_protocol"
         label="proxy_protocol"
@@ -59,6 +67,7 @@ export const ListenFields = () => {
       >
         <Switch />
       </Form.Item>
+
       <Form.Item
         name="proxy_protocol_accept_no_header"
         label="proxy_protocol_accept_no_header"
@@ -66,6 +75,7 @@ export const ListenFields = () => {
       >
         <Switch />
       </Form.Item>
+
       <Form.Item name="detour" label="detour" labelCol={labelCol}>
         <Input />
       </Form.Item>
